@@ -1,0 +1,31 @@
+body {
+    font-family: "Arial";
+    font-size: 2.0em;
+    text-align: center;
+    background-color: #49ac5a;
+    padding-top: 60px;
+    margin: 0em;
+  }
+
+.header {
+    background-color: #f34949;
+    color: #ffffff;
+  }
+
+h3, p{
+    color: #ffffff;
+  }
+img {
+    max-width: 50%;
+    height: auto;
+}
+
+#a{
+  background-color: #181a1b;
+  padding: 10px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 8px;
+}
+
+  
