@@ -2,6 +2,5 @@
 Small exercises made for web systems development
 
 Labs <br />
-
-[Lab 1](https://ajcastan0103.github.io/Web-Dev-Exercises/lab01) <br />
-[Lab 2](https://ajcastan0103.github.io/Web-Dev-Exercises/Lab02/lab02)
+<a href="https://ajcastan0103.github.io/Web-Dev-Exercises/lab01" target="_blank">Lab 1</a> <br />
+<a href="https://ajcastan0103.github.io/Web-Dev-Exercises/Lab02/lab02" target="_blank">Lab 2</a> <br />
