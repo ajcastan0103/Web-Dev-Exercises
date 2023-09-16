@@ -6,3 +6,4 @@ Labs <br />
 <a href="https://ajcastan0103.github.io/Web-Dev-Exercises/Lab02/lab02" target="_blank">Lab 2</a> <br />
 <a href="https://ajcastan0103.github.io/Web-Dev-Exercises/Lab03/lab03c.html" target="_blank">Lab 3</a> <br />
 <a href="https://ajcastan0103.github.io/Web-Dev-Exercises/lab04" target="_blank">Lab 4</a> <br />
+<a href="https://ajcastan0103.github.io/Web-Dev-Exercises/Lab05/lab05.html" target="_blank">Lab 5</a> <br />
