@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="lab05.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    
+    
+    <title>Lab05</title>
+  </head>
+  <body>
+    
+    <h1 class="header">Lab05</h1>
+    <div class="row">
+          <div class="container">
+                <div id="screen">
+                  <div id="create">
+                    <img src=".\body.png" class="drag-image" id="body" width="400" height="400"/>
+                    <img src=".\nose.png" class="drag-image" id="nose" width="100" height="100" />
+                    <img src=".\eyes.png" class="drag-image" id="eyes" width="200" height="200" />
+                    <img src=".\mouth.png" class="drag-image" id="mouth" width="150" height="150" /> 
+                    <img src=".\hat.png" class="drag-image" id="hat" width="230" height="230" /> 
+                  </div>
+                </div>
+          </div>
+          <button id="pic"> Save as PNG</button>
+    </div>
+ 
+    </br> </br> </br> </br>
+    <img id="epicPic" src="https://lessonpix.com/drawings/1076/100x100/Smile.png" width="100" height="100">
+
+    <div id="m1" class="model">
+      <span class="close">&times;</span>
+      <img class="model-content" id="img01">
+    </div>
+    <script>
+        $( function() {
+            $("#body").draggable();
+            $("#eyes").draggable();
+            $("#nose").draggable();
+            $("#mouth").draggable();
+            $("#hat").draggable();
+        } );
+
+        document.getElementById("pic").onclick = function() {
+            const sc=document.getElementById("create");
+            html2canvas(sc,{logging: true, letterRendering: 1, allowTaint: false, useCORS: true }).then((canvas) => {
+              const base64image=canvas.toDataURL("image/png");
+              var anchor= document.createElement("a");
+              anchor.setAttribute("href",base64image);
+              anchor.setAttribute("download","potato.png");
+              anchor.click();
+              anchor.remove();
+            });
+          }
+    
+          
+        document.getElementById("epicPic").onmouseover = function(){
+            document.getElementById("m1").style.display = "block";
+            document.getElementById("img01").src = this.src;
+          }
+
+            document.getElementsByClassName("close")[0].onclick = function() { 
+              document.getElementById("m1").style.display = "";
+          }
+    </script>
+
+  </body>
+
+</html>
