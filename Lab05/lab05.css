@@ -1,0 +1,79 @@
+body {
+    font-family: "Arial";
+    font-size: 2.0em;
+    text-align: center;
+    background-color: #4e61d2;
+    padding-top: 60px;
+    margin: 0em;
+  }
+
+.header {
+    background-color: #f34949;
+    color: #ffffff;
+  }
+
+h3, p{
+    color: #ffffff;
+  }
+
+
+#a{
+  background-color: #181a1b;
+  padding: 80px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 8px;
+}
+
+.container {
+    margin-top: 50px;
+    cursor: move;
+  }
+  
+#screen {
+    overflow: hidden;
+    width: 800px;
+    height: 600px;
+    clear: both;
+    border: 1px solid black;
+    background-color: white;
+  }
+
+  
+  .model {
+    display:none;
+    width: 100%; 
+    height: 100%; 
+    padding-top: 100px;
+    position: fixed; 
+    left: 0;
+    top: 0;
+    overflow: auto; 
+  
+  }
+  
+  .model-content {
+    margin: auto;
+    display: block;
+    width: 100%;
+  }
+  
+  .model-content {  
+    animation-name: zoom;
+    animation-duration: 2s;
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 50px;
+    transition: 0.6s;
+  }
+  
