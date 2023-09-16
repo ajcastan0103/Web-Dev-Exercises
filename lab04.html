@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lab04</title>
+    </head>
+
+    <body>
+  
+        <form>
+            Enter your Full name: <input type="text" id="name">
+            </br> </br>
+            Enter your Address: <input type="text" id="address">
+            </br> </br>
+            Enter your Phone Number: <input type="text" id="number">
+            </br> </br>
+            <input type="button" onclick="checkDetails(document.getElementById('name'),document.getElementById('address'),document.getElementById('number'),'Please enter the correct info.'),display()" value="Submit">
+            <p id="output"></p>
+        </form>
+
+        <div>
+        <textarea name="count" id="textbox"  class="form-control" rows="10" cols="70" onkeyup="countChars(this); countChars2(this)" ></textarea>
+        <p id="count1" style="font-size:20px;">There are 0 character(s) in the textarea.</p>
+        <p id="count2" style="font-size:20px;">There are 0 character(s) in the textarea that are letters.</p>
+        </div>
+
+        <div>
+            <ul>
+                <a href="https://www.w3schools.com">W3Schools</a> 
+                </br>
+                <a href="http://www.testingmcafeesites.com">Tester Site</a>
+            </ul>
+            </br>
+            <input type="button" onclick="bookmark()" value="Check Bookmark's Security"> 
+        </div>
+
+
+        
+
+        <div>
+        <script>
+            function checkDetails(name1,address1,number1, helperMsg){
+
+            var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+            if(!name1.value.match(regName))
+            {
+                alert(helperMsg);
+                elem.focus();
+                return false;	
+            }
+
+            if(address1.value.length == 0)
+            {
+                alert(helperMsg);
+                elem.focus();
+                return false;	
+            }
+
+            var phoneRegex = /^\(?([0-9]{3})\)?[-]?([0-9]{3})[-]?([0-9]{4})$/;
+            var number2= transformNumber(number1.value);
+            if(!number1.value.match(phoneRegex))
+            {
+                if(number2 !== null)
+               {
+                document.getElementById('number').value=transformNumber(number1.value);
+               }	
+               else
+               {
+                alert(helperMsg);
+                elem.focus();
+                return false;	
+               }
+            }
+        
+            return true;
+        }
+
+        function transformNumber(number) {
+    
+            number_v = number.replace(/[^\d]/g, "");
+            if (number.length == 10 && typeof number === 'number') 
+            {
+                 var a= number_v.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+                 return a;
+            }
+
+            return null;
+        }
+
+
+        function display()
+        {
+            if(!checkDetails(document.getElementById('name'),document.getElementById('address'),document.getElementById('number')))
+            {
+                return null;
+            }
+
+            document.getElementById("output").style.color = "#ffff00";
+            document.getElementById("output").style.backgroundColor = "#0000FF";
+            document.getElementById("output").style.padding = "30px";
+            document.getElementById("output").style.fontSize = "25px";
+            document.getElementById("output").innerHTML = "---Your Details---"+  "<br />"+ " <br /> Full Name:" + document.getElementById("name").value +
+            "<br />"+ "<br /> Address:" + document.getElementById("address").value +
+            "<br /> " + " <br />  Phone number:"+document.getElementById("number").value;
+
+        }
+
+        function countChars()
+        {
+            document.getElementById("count1").style.fontSize = "20px";
+            document.getElementById("count1").innerHTML ="There are " + document.getElementById("textbox").value.length + " character(s) in the textarea.";
+        }
+
+        function countChars2()
+        {
+            document.getElementById("count2").style.fontSize = "20px";
+            var str= document.getElementById("textbox").value;
+            var letter_Count = 0;
+            for (var position = 0; position < str.length; position++) 
+            {
+                if (str.charAt(position).match("^[a-zA-Z\(\)]+$"))
+                {
+                    letter_Count += 1;
+                }
+            }
+            document.getElementById("count2").innerHTML = "There are "+ letter_Count + " in the textarea that are letters.";
+            
+        }
+        
+        function bookmark()
+        {
+            var links = document.getElementsByTagName("a");
+            for(i=0; i < links.length; i++)
+            {
+                var link= document.getElementsByTagName("a")[i];
+                var str = link.getAttribute("href");
+                if(str.startsWith("https://"))
+                {
+                    link.innerHTML =str+ "<img src=\"https://cdn2.iconfinder.com/data/icons/telegram/154/telegram-lock-safety-security-green-512.png\" width=\"10px\" height=\"10px\">";
+                }
+                else{
+                    link.innerHTML = document.getElementsByTagName("a")[i] + "<img src=\"  https://www.clipartmax.com/png/middle/156-1566079_red-lock-icon-png.png\" width=\"10px\" height=\"10px\">";
+                }
+            }
+        }
+
+        
+
+        </script>
+        </div>
+            
+
+      
+
+    </body>
+</html>
