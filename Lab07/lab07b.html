@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="lab07b.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Lab07b</title>
+  </head>
+  <body>
+    <h1>Enter Your Information</h1>
+    <div class="b">
+      <form
+        action="https://www2.scs.ryerson.ca/~ajcastan/cgi-bin/lab07b.cgi"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <input class ="fill"
+          type="text"
+          name="fname"
+          placeholder="First Name"
+          required
+        /><br />
+        <input class="fill"
+          type="text"
+          name="lname"
+          placeholder="Last Name"
+          required
+        /><br />
+
+        <input class="fill"
+          type="text"
+          name="streetName"
+          placeholder="Enter Street Name"
+          required
+        />
+        <br />
+        <input class="fill"
+          type="text"
+          name="city"
+          placeholder="Enter City"
+          required
+        />
+        <br />
+
+        <input class="fill"
+          type="text"
+          name="postalCode"
+          id="postalCode"
+          pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
+          placeholder="Enter Postal Code"
+          required
+        />
+        <select class="fill"
+          name="province"
+          required
+        >
+          <option value="" selected disabled hidden>Choose Your Province</option>
+          <option value="Alberta">Alberta</option>
+          <option value="British Columbia">British Columbia</option>
+          <option value="Manitoba">Manitoba</option>
+          <option value="New Brunswick">New Brunswick</option>
+          <option value="Newfoundland and Labrador">Newfoundland & Labrador</option>
+          <option value="Nova Scotia">Nova Scotia</option>
+          <option value="Ontario">Ontario</option>
+          <option value="Prince Edward Island">Prince Edward Island</option>
+          <option value="Quebec">Quebec</option>
+          <option value="Saskatchewan">Saskatchewan</option></select
+        >
+        <br />
+        <input class="fill"
+          type="tel"
+          name="phone"
+          id="phone"
+          placeholder="Phone Number"
+          pattern="[0-9]{10}"
+          required
+        />
+        <br/>
+        <input class="fill"
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+       
+        <input class="fill" 
+          type="file" 
+          id="img" 
+          name="photo"
+          required>
+          
+        <input class="button"
+          type="submit"
+          value="Submit"
+        />
+      </form>
+    </div>
+  </body>
+</html>
