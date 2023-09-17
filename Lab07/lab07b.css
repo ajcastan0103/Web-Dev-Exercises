@@ -1,0 +1,31 @@
+h1{
+    text-align: center;
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4em;
+}
+.b{
+    display: flex; 
+    justify-content: center
+}
+.fill{
+    width: 100%;
+    padding: 12px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: em;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+.button{
+    background-color: blue;
+    width: 100%;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 40px 2px;
+    cursor: pointer;
+}
